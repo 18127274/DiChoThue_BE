@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj": {}
+    "D:\\Desktop\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj": {}
   },
   "projects": {
-    "D:\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj": {
+    "D:\\Desktop\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj",
+        "projectUniqueName": "D:\\Desktop\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj",
         "projectName": "API_PTUD_R5",
-        "projectPath": "D:\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj",
-        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
-        "outputPath": "D:\\DiChoThue_BE\\API_PTUD_R5\\obj\\",
+        "projectPath": "D:\\Desktop\\DiChoThue_BE\\API_PTUD_R5\\API_PTUD_R5.csproj",
+        "packagesPath": "C:\\Users\\Hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\Desktop\\DiChoThue_BE\\API_PTUD_R5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -31,6 +31,7 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -42,6 +43,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
@@ -88,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,8 +17,13 @@ namespace API_PTUD_R5.Controller
         }
 
         [HttpGet]
-        public ActionResult<List<NHACUNGCAP>> Get() =>
-            _bookService.Get();
+        public ActionResult<List<NHACUNGCAP>> Get()
+        {
+            System.Diagnostics.Debug.WriteLine("tring");
+           return _bookService.Get();
+
+        }
+            
 
         [HttpGet("{id}")]
         public ActionResult<NHACUNGCAP> Get(string id)
