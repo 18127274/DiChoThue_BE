@@ -21,7 +21,7 @@ namespace API_PTUD_R5.Controller
         public ActionResult<List<SANPHAM>> Get() =>
             _bookService.Get();
 
-        [HttpGet]
+        [HttpGet("{id}")]
         public ActionResult<SANPHAM> Get(string id)
         {
             var book = _bookService.Get(id);
