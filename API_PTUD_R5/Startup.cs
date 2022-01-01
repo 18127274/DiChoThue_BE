@@ -56,6 +56,8 @@ namespace API_PTUD_R5
 
             services.AddSingleton<SANPHAMService>();
 
+            services.AddSingleton<KHACHHANGService>();
+
             services.AddControllers();
         }
 

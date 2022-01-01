@@ -9,6 +9,8 @@ namespace API_PTUD_R5.Model
     {
         public string NhaCungCapCollectionName { get; set; }
         public string SanPhamCollectionName { get; set; }
+
+        public string KhachHangCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DatabaseName { get; set; }
     }
@@ -17,7 +19,9 @@ namespace API_PTUD_R5.Model
     {
         string NhaCungCapCollectionName { get; set; }
         string SanPhamCollectionName { get; set; }
+        string KhachHangCollectionName { get; set; }
         string ConnectionString { get; set; }
         string DatabaseName { get; set; }
     }
+
 }
