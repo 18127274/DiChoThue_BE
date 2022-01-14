@@ -23,7 +23,7 @@ namespace API_PTUD_R5.Service
         public List<KHACHHANG> Get() =>
             _books.Find(book => true).ToList();
 
-        public KHACHHANG Get(string id) =>
+        public KHACHHANG Get(long id) =>
             _books.Find<KHACHHANG>(book => book.Id == id).FirstOrDefault();
 
         public KHACHHANG Create(KHACHHANG book)
@@ -32,13 +32,13 @@ namespace API_PTUD_R5.Service
             return book;
         }
 
-        public void Update(string id, KHACHHANG bookIn) =>
+        public void Update(long id, KHACHHANG bookIn) =>
             _books.ReplaceOne(book => book.Id == id, bookIn);
 
         public void Remove(KHACHHANG bookIn) =>
             _books.DeleteOne(book => book.Id == bookIn.Id);
 
-        public void Remove(string id) =>
+        public void Remove(long id) =>
             _books.DeleteOne(book => book.Id == id);
     }
 }

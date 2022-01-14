@@ -1,7 +1,6 @@
 ﻿using API_PTUD_R5.Model;
 using API_PTUD_R5.Service;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 
 namespace API_PTUD_R5.Controller
@@ -18,11 +17,16 @@ namespace API_PTUD_R5.Controller
         }
 
         [HttpGet]
-        public ActionResult<List<SANPHAM>> Get() =>
-            _bookService.Get();
+        public ActionResult<List<SANPHAM>> Get()
+        {
+            System.Diagnostics.Debug.WriteLine("tring");
+            return _bookService.Get();
+
+        }
+
 
         [HttpGet("{id}")]
-        public ActionResult<SANPHAM> Get(string id)
+        public ActionResult<SANPHAM> Get(int id)
         {
             var book = _bookService.Get(id);
 
@@ -34,19 +38,39 @@ namespace API_PTUD_R5.Controller
             return book;
         }
 
+        [HttpGet("filter/{maphanloai}")]
+        public List<SANPHAM> filterTheoPhanLoai(long maphanloai)
+        {
+            var book = _bookService.filter(maphanloai);
+            return book;
+        }
+
+        [HttpGet("shop/{manhacungcap}")]
+        public List<SANPHAM> filterTheoNCC(long manhacungcap)
+        {
+            var book = _bookService.shop(manhacungcap);
+            return book;
+        }
+
+        [HttpGet("timkiem")]
+        public List<SANPHAM> TimKiem([FromQuery] string tensp)
+        {
+            var book = _bookService.TimKiem(tensp);
+            return book;
+        }
+
         [HttpPost]
         public ActionResult<SANPHAM> Create(SANPHAM book)
         {
-            if (book.Min > 0 && book.Max <= book.SL)
-            {
-                _bookService.Create(book);
-                return CreatedAtRoute("GetBook", new { id = book.Id.ToString() }, book);
-            }
+            SANPHAM temp = _bookService.Create(book);
+
+            if (temp != null)
+                return Ok(book);
             return BadRequest();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, SANPHAM bookIn)
+        public IActionResult Update(int id, SANPHAM bookIn)
         {
             var book = _bookService.Get(id);
 
@@ -57,11 +81,11 @@ namespace API_PTUD_R5.Controller
 
             _bookService.Update(id, bookIn);
 
-            return NoContent();
+            return Ok(bookIn);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(long id)
         {
             var book = _bookService.Get(id);
 
@@ -76,4 +100,3 @@ namespace API_PTUD_R5.Controller
         }
     }
 }
-

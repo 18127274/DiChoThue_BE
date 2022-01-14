@@ -26,7 +26,7 @@ namespace API_PTUD_R5.Controllers
 
 
         [HttpGet("{id}")]
-        public ActionResult<KHACHHANG> Get(string id)
+        public ActionResult<KHACHHANG> Get(long id)
         {
             var book = _bookService.Get(id);
 
@@ -48,7 +48,7 @@ namespace API_PTUD_R5.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, KHACHHANG bookIn)
+        public IActionResult Update(long id, KHACHHANG bookIn)
         {
             var book = _bookService.Get(id);
 
@@ -63,7 +63,7 @@ namespace API_PTUD_R5.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(long id)
         {
             var book = _bookService.Get(id);
 

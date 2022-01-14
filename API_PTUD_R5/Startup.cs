@@ -35,7 +35,7 @@ namespace API_PTUD_R5
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddCors(options =>
             {
                 options.AddPolicy(MyAllowSpecificOrigins,
@@ -46,7 +46,6 @@ namespace API_PTUD_R5
                     builder.AllowAnyHeader();
                 });
             });
-
 
             services.Configure<DatabaseSettings>(
                 Configuration.GetSection(nameof(DatabaseSettings)));
@@ -59,6 +58,10 @@ namespace API_PTUD_R5
             services.AddSingleton<SANPHAMService>();
 
             services.AddSingleton<KHACHHANGService>();
+
+            services.AddSingleton<PHANLOAIService>();
+
+            services.AddSingleton<KHUVUCService>();
 
             services.AddControllers();
         }

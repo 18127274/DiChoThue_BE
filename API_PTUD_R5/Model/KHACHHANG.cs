@@ -10,7 +10,7 @@ namespace API_PTUD_R5.Model
     {
         [BsonId]
 
-        public string Id { get; set; }
+        public long Id { get; set; }
 
         public string Tendangnhap { get; set; }
 

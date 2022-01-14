@@ -26,7 +26,7 @@ namespace API_PTUD_R5.Controller
             
 
         [HttpGet("{id}")]
-        public ActionResult<NHACUNGCAP> Get(string id)
+        public ActionResult<NHACUNGCAP> Get(int id)
         {
             var book = _bookService.Get(id);
 
@@ -42,13 +42,14 @@ namespace API_PTUD_R5.Controller
         public ActionResult<NHACUNGCAP> Create(NHACUNGCAP book)
         {
             NHACUNGCAP temp = _bookService.Create(book);
+         
             if (temp!=null)
                 return Ok(book);
             return BadRequest();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, NHACUNGCAP bookIn)
+        public IActionResult Update(int id, NHACUNGCAP bookIn)
         {
             var book = _bookService.Get(id);
 
@@ -63,7 +64,7 @@ namespace API_PTUD_R5.Controller
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(string id)
+        public IActionResult Delete(int id)
         {
             var book = _bookService.Get(id);
 

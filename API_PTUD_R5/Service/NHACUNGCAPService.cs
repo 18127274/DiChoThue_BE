@@ -23,22 +23,23 @@ namespace API_PTUD_R5.Service
         public List<NHACUNGCAP> Get() =>
             _books.Find(book => true).ToList();
 
-        public NHACUNGCAP Get(string id) =>
+        public NHACUNGCAP Get(long id) =>
             _books.Find<NHACUNGCAP>(book => book.Id == id).FirstOrDefault();
 
         public NHACUNGCAP Create(NHACUNGCAP book)
         {
+            book.Id = _books.AsQueryable().Count() +1;
             _books.InsertOne(book);
             return book;
         }
 
-        public void Update(string id, NHACUNGCAP bookIn) =>
+        public void Update(long id, NHACUNGCAP bookIn) =>
             _books.ReplaceOne(book => book.Id == id, bookIn);
 
         public void Remove(NHACUNGCAP bookIn) =>
             _books.DeleteOne(book => book.Id == bookIn.Id);
 
-        public void Remove(string id) =>
+        public void Remove(long id) =>
             _books.DeleteOne(book => book.Id == id);
     }
 }
